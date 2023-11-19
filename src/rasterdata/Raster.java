@@ -9,13 +9,11 @@ public interface Raster {
 
     /**
      * Returns the number of columns in this raster
-     * @return
      */
     int getWidth();
 
     /**
      * returns the number of rows in this raster
-     * @return
      */
     int getHeight();
 

@@ -1,30 +1,23 @@
 package rasterop;
 
 import rasterdata.Raster;
-import rasterdata.RasterBI;
-import java.awt.BasicStroke;
-
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Stroke;
-import java.awt.image.BufferedImage;
 
 /**
  * Represents a trivial algorithm for drawing lines
  */
 public class LinerTrivial implements Liner{
-    private RasterBI img;
+    private final Raster img;
     private int color;
 
-    public LinerTrivial(RasterBI img) {
-        this(img, 0xffff00);
+    public LinerTrivial(Raster img) {
+        this(img, 16776960);
     }
-    public LinerTrivial(RasterBI img, int color) {
+    public LinerTrivial(Raster img, int color) {
         this.img = img;
         this.color = color;
     }
     @Override
-    public void drawLine(double x1, double y1, double x2, double y2, int color) {
+    public void drawLine(double x1, double y1, double x2, double y2) {
         double temp;
         double k;
         double q;
@@ -69,7 +62,7 @@ public class LinerTrivial implements Liner{
     }
 
     @Override
-    public void drawDashLine(double x1, double y1, double x2, double y2, int color) {
+    public void drawDashLine(double x1, double y1, double x2, double y2) {
         double temp;
         double k;
         double q;
@@ -94,7 +87,7 @@ public class LinerTrivial implements Liner{
 
             for (int x = (int) Math.round(x1); x < x2; x++) {
                 y = k * x + q;
-                if (dots == false) {
+                if (!dots) {
                     even++;
                     img.setColor(x, (int) y, color);
                     if (even == 10){
@@ -125,7 +118,7 @@ public class LinerTrivial implements Liner{
 
             for (int x = (int) Math.round(y1); x < y2; x++) {
                 y = k * x + q;
-                if (dots == false) {
+                if (!dots) {
                     even++;
                     img.setColor((int)y, x, color);
                     if (even == 10){
@@ -142,6 +135,8 @@ public class LinerTrivial implements Liner{
                 }
             }
         }
-
+    }
+    public void setColor(int color) {
+        this.color = color;
     }
 }

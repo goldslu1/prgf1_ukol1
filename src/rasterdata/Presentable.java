@@ -9,7 +9,6 @@ public interface Presentable {
 
     /**
      * Draws itself onto the given Graphics object
-     * @param graphics
      */
     void present(Graphics graphics);
 }
