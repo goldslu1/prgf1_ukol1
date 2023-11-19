@@ -20,11 +20,21 @@ public class Polygon {
         this.points = points;
         this.color = color;
     }
+
+    /**
+     * represents a function for adding a point into a polygon
+     * @param p represents parameter from Point
+     * @return back the same Polygon with newly added point
+     */
     public Polygon addPoint(Point p){
         points.add(p);
         return this;
     }
 
+    /**
+     * represents a function for getting the list of all lines from the polygon
+     * @return List of lines
+     */
     public List<Line> getLines(){
         List<Line> lines = new ArrayList<>();
         for (int i = 0; i < points.size(); i++){

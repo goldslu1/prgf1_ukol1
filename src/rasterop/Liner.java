@@ -18,15 +18,6 @@ public interface Liner {
     void drawLine(double x1, double y1, double x2, double y2);
 
     /**
-     * Draws a dashed line represented by 2 points onto the given Raster using the given color
-     * @param x1 x coordinate of the first point; values ranging from 0 to width of the Raster
-     * @param y1 y coordinate of the first point; values ranging from 0 to height of the Raster
-     * @param x2 x coordinate of the second point; values ranging from 0 to width of the Raster
-     * @param y2 y coordinate of the second point; values ranging from 0 to height of the Raster
-     */
-    void drawDashLine(double x1, double y1, double x2, double y2);
-
-    /**
      * Draws a straight line represented by 2 points
      * @param p1 first point of the line
      * @param p2 second point of the line

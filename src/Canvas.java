@@ -198,6 +198,9 @@ public class Canvas {
 		init();
 	}
 
+	/**
+	 * Procedure for resetting the canvas to its starting state
+	 */
 	private void init() {
 		o1 = true;
 		o2 = true;
@@ -211,6 +214,12 @@ public class Canvas {
 		points.clear();
 		recPoints.clear();
 	}
+
+	/**
+	 * Procedure for redrawing a polyline
+	 * @param points list of points of the polyline
+	 * @param color int value
+	 */
 	public void redrawPolyLine(List<Point> points, int color) {
 		ln.setColor(color);
 		if (points.size() > 1){
@@ -219,6 +228,10 @@ public class Canvas {
 			}
 		}
 	}
+
+	/**
+	 * Represents a procedure for redrawing objects onto the canvas
+	 */
 	public void draw() {
 		img.clear(background);
 		if (o1) {

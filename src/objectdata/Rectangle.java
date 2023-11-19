@@ -15,6 +15,10 @@ public class Rectangle extends Polygon {
         this.p2 = p2;
         this.calculateCorners();
     }
+
+    /**
+     * represents a procedure that calculates the remaining points of the Rectangle
+     */
     void calculateCorners(){
         double xc = (p1.getX() + p2.getX()) / 2;
         double yc = (p1.getY() + p2.getY()) / 2;
@@ -25,18 +29,34 @@ public class Rectangle extends Polygon {
         p4 = new Point(xc + yd, yc - xd);
     }
 
+    /**
+     * Getter for returning the first point of the rectangle
+     * @return first point of the rectangle
+     */
     public Point getP1() {
         return p1;
     }
 
+    /**
+     * Getter for returning the second point of the rectangle
+     * @return second point of the rectangle
+     */
     public Point getP2() {
         return p2;
     }
 
+    /**
+     * Getter for returning the third point of the rectangle
+     * @return third point of the rectangle
+     */
     public Point getP3() {
         return p3;
     }
 
+    /**
+     * Getter for returning the fourth point of the rectangle
+     * @return fourth point of the rectangle
+     */
     public Point getP4() {
         return p4;
     }

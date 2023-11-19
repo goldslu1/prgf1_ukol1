@@ -11,6 +11,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
 
+/**
+ * Represents the scanline algorithm for filling an area
+ */
+
 public class ScanLine implements Filler{
     private Raster img;
     private List<Point> vertices;
@@ -24,9 +28,21 @@ public class ScanLine implements Filler{
     public void setImg(Raster img) {
         this.img = img;
     }
+
+    /**
+     * Setter for setting the liner
+     * @param ln parameter from LinerTrivial that draws lines
+     */
     public void setLiner(LinerTrivial ln) {
         this.ln = ln;
     }
+
+    /**
+     * Procedure that sets the vertices and color of the fill and border
+     * @param vertices
+     * @param colorFill
+     * @param colorBorder
+     */
     public void setPoints(List<Point> vertices, int colorFill, int colorBorder) {
         this.colorBorder = colorBorder;
         this.colorFill = colorFill;
