@@ -242,18 +242,18 @@ public class Canvas {
 		}
 
 		List<Point> c = cl.clip(points, clipPoints);
-		if (o4){
+		if (o4){ //Scan line - not working
 			sl.setPoints(c, 8912896, 34952);
 			sl.draw((p) -> true);
 		}
 		if (o3) {
 			redrawPolyLine(c, 16711680);
 		}
-		if (recPoints.size() == 2){
+		if (recPoints.size() == 2){ //Drawing a rectangle
 			rectangle = new Rectangle(recPoints.get(0), recPoints.get(1));
 			rt.draw(rectangle, ln);
 		}
-		if (seedMode){
+		if (seedMode){ //Seed fill
 			sf.setSeed((int)seed.getX(), (int)seed.getY(), 65416);
 			sf.draw(new Pattern());
 		}
